@@ -2,8 +2,10 @@
   "name": "namaste",
   "version": "1.0.0",
   "description": "This Repositry is about all the concepts that i am learning !!!",
-  "main": "index.js",
+  "source": "App.js",
+  
   "scripts": {
+    "start" : "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/NitinReddyKamsani/myLearnings-React/issues"
   },
-  "homepage": "https://github.com/NitinReddyKamsani/myLearnings-React#readme"
+  "homepage": "https://github.com/NitinReddyKamsani/myLearnings-React#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist" : [
+    "last 2 versions"
+  ]
 }
