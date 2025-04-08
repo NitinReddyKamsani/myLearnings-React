@@ -25,7 +25,8 @@
     width: 220px;
     padding: 5px;
     background-color :beige;
-    margin: 5px;
+    margin: 20px;
+    word-wrap: break-word;
 }
 
 .card:hover{
@@ -48,3 +49,15 @@
    
 }
 
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.shimmer-card{
+    width: 220px;
+    height : 350px;
+    background-color: aliceblue;
+    margin: 20px;
+}
