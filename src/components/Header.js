@@ -6,12 +6,7 @@ const Header = () =>{
     const [Btn,setBtn] = useState("Login");
 
     function handleBtn(){
-        if(Btn=="Login"){
-            setBtn("Logout");
-        }
-        else{
-            setBtn("Login");
-        }
+        Btn === 'Login' ? setBtn("Logout") : setBtn("Login");
     }
     return (
         <div className="header">
