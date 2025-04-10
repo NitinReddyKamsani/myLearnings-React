@@ -25,8 +25,9 @@ const RestaurantMenu = () =>{
     }
 
     const info = resInfo?.data?.cards?.[2]?.card?.card?.info;
-   const {itemCards} = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card;
-   console.log(itemCards)
+     const {itemCards} = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card;
+     console.log(itemCards)
+   
     const { name, locality, cuisines, costForTwoMessage } = info;
     return resInfo === null ? <Shimmer /> : (
         <div className="res-menu">
@@ -35,11 +36,11 @@ const RestaurantMenu = () =>{
             <h4>Cuisines : {cuisines.join(",")} - {costForTwoMessage}</h4>
             <h3>Menu</h3>
             <ul>
-                {
+                { 
                     itemCards.map((item)=>(
                         <li key={item.card.info.id}> {item.card.info.name}---Rs.{item.card.info.defaultPrice/100 || item.card.info.price/100}</li> 
                     ))
-                
+
                 }
             </ul>
         </div>
