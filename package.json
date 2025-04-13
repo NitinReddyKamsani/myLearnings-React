@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/NitinReddyKamsani/myLearnings-React#readme",
   "devDependencies": {
-    "parcel": "^2.14.4"
+    "parcel": "^2.14.4",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "react": "^19.1.0",

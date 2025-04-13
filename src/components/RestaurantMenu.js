@@ -19,11 +19,11 @@ const RestaurantMenu = () =>{
    
     const { name, locality, cuisines, costForTwoMessage } = info;
     return resInfo === null ? <Shimmer /> : (
-        <div className="res-menu">
-            <h1>Name :{name} </h1>
-            <h2>Address : {locality}</h2>
-            <h4>Cuisines : {cuisines.join(",")} - {costForTwoMessage}</h4>
-            <h3>Menu</h3>
+        <div className="m-2 p-2">
+            <h1 className="font-bold text-2xl">Name :{name} </h1>
+            <h2 className="font-bold text-xl">Address : {locality}</h2>
+            <h4 className="font-bold text-lg">Cuisines : {cuisines.join(",")} - {costForTwoMessage}</h4>
+            <h3 className="font-bold text-lg">Menu</h3>
             <ul>
                 { 
                     itemCards.map((item)=>(

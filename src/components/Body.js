@@ -33,22 +33,26 @@ const Body = () =>{
     if(isOnline === false) return <h1>It seems your are offline !! please check your intenet coonection</h1>
 
     return restaurants.length===0 ? <Shimmer /> : (
-        <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input className="search-box"  value = {input} onChange={(e)=>{
+        <div className="">
+            <div className="flex justify-between">
+                <div className="m-4 p-4">
+                    <input className="border border-solid border-black"  value = {input} onChange={(e)=>{
                         setInput(e.target.value);
                     }} />
-                    <button onClick={()=>{
+                    <button className="bg-green-100 m-2 px-4 py-1" onClick={()=>{
                        const search =  restaurants.filter((res)=> 
                             res.info.name.toLowerCase().includes(input.toLowerCase()))
                             setfilteredRestaurants(search);
                     }}>Search</button>
                 </div>
-                <button onClick={handleClick}>Filter Top Restaurants</button>
+
+                <div className="bg-gray-100 m-6 p-2 h-10">
+                <button className=""onClick={handleClick}>Filter Top Restaurants</button>
+                </div>
+                
             </div>
         
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {
                     filteredRestaurants.map((restaurant) => 
                      <Link key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id} className="link-item"> <RestaurantCard  resData={restaurant} /> </Link>
