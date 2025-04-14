@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{RestroReviews} from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ const Body = () =>{
     const [filteredRestaurants,setfilteredRestaurants] = useState([]);
     const [input,setInput] = useState("");
 
+    const Reviews = RestroReviews(RestaurantCard);
+
     useEffect(()=>{
         fetchData();
     },[])
@@ -20,6 +22,7 @@ const Body = () =>{
         const rest = json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
         setRestaurant(rest);
         setfilteredRestaurants(rest);
+        console.log(restaurants);
     }
 
    const handleClick = () => {
@@ -29,6 +32,8 @@ const Body = () =>{
    }
 
    const isOnline = useOnlineStatus();
+
+
 
     if(isOnline === false) return <h1>It seems your are offline !! please check your intenet coonection</h1>
 
@@ -55,7 +60,12 @@ const Body = () =>{
             <div className="flex flex-wrap">
                 {
                     filteredRestaurants.map((restaurant) => 
-                     <Link key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id} className="link-item"> <RestaurantCard  resData={restaurant} /> </Link>
+                     <Link key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id} className="link-item"> 
+                     {
+                        restaurant.info.totalRatingsString ? <Reviews resData={restaurant} /> : 
+                        <RestaurantCard  resData={restaurant}  />
+
+                     } </Link>
                     )
                 }
             </div>
