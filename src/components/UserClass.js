@@ -26,9 +26,9 @@ class UserClass extends React.Component{
 
 
                </p>
-               <h3>Serving for almost {count} happy Customers😄</h3>
+               <h3 className="font-bold">Serving for almost {count} happy Customers😄</h3>
 
-               <h4>Get in touch at : {this.props.email}</h4>
+               <h4 className="font-bold">Get in touch at : {this.props.email}</h4>
 
 
             </div>

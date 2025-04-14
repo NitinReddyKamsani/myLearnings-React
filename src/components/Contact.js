@@ -31,8 +31,8 @@ class Contact extends React.Component{
 
         return(
         <div>
-            <h2>Name : {name}</h2>
-            <h2>Email : supportfoodvilla@icloud.com</h2>
+            <h2 className="font-bold">Name : {name}</h2>
+            <h2 className="font-bold">Email : supportfoodvilla@icloud.com</h2>
         </div>
         )
     }
