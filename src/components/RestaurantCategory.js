@@ -1,10 +1,13 @@
 import ItemList from "./ItemList";
+import React,{useState} from "react";
 
-function handleClick() {
-    console.log('clicked');
-}
 
-const RestaurantCategory = ({data}) => {
+const RestaurantCategory = ({data,showItems,setShowIndex}) => {
+
+    function handleClick(){
+        setShowIndex();
+    }
+
     return(
         <div className="p-4 w-6/12 mx-auto my-4  bg-gray-100 shadow-lg cursor-pointer" onClick={handleClick}>
             <div className="flex justify-between">
@@ -12,7 +15,7 @@ const RestaurantCategory = ({data}) => {
             <span className="font-bold text-xl">v</span>
             
             </div>
-            <ItemList items = {data.itemCards} />
+           { showItems && <ItemList items = {data.itemCards} /> }
         </div>
     );
 };

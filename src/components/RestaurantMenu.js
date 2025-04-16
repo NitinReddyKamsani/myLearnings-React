@@ -8,6 +8,8 @@ const RestaurantMenu = () =>{
 
     const {resId} = useParams();
 
+    const [showIndex,setShowIndex] = useState(0);
+
     const resInfo = useRestaurantMenu(resId);
 
     if(resInfo === null) {
@@ -29,9 +31,22 @@ const RestaurantMenu = () =>{
             <h2 className="font-bold text-xl">Address : {locality}</h2>
             <h4 className="font-bold text-lg">Cuisines : {cuisines.join(",")} - {costForTwoMessage}</h4>
             {
-                categories.map((category)=>(
-                    <RestaurantCategory data={category?.card?.card} key={category?.card?.card?.categoryId}/>
-                ))
+                categories.map((category,Index)=>
+                     { 
+                    
+                    return(
+                    <RestaurantCategory data={category?.card?.card} 
+                    key={category?.card?.card?.categoryId} 
+                    showItems = {Index===showIndex ? true : false}
+                    setShowIndex={()=>setShowIndex(Index)} 
+                    
+                    />
+                   
+                )
+            }
+                
+            )
+                
             }
         </div>
     )

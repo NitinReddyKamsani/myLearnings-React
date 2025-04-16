@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { LOGO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../../utils/UserContext";
+import {  } from "react";
 
 const Header = () =>{
 
     const [Btn,setBtn] = useState("Login");
+
+    const {loggedInUser} = useContext(UserContext);
+    
 
     function handleBtn(){
         Btn === 'Login' ? setBtn("Logout") : setBtn("Login");
@@ -16,12 +21,13 @@ const Header = () =>{
             </div>
             <div className="flex">
                 <ul className="flex gap-3 p-6 m-7">
-                   <Link to="/" className="link"> <li>Home</li></Link>
+                    <Link to="/" className="link"> <li>Home</li></Link>
                     <Link to="/about" className="link" > <li>About US</li> </Link>  
                     <Link to="/contact" className="link"> <li>Contact US</li> </Link>
                     <Link className="link"><li>Cart</li></Link>
                     <Link to = "/grocery" className="link"><li>Grocery</li></Link>
                     <button className="" onClick={handleBtn}>{Btn}</button>
+                    <Link className="link"><li>{loggedInUser}</li></Link>
                 </ul>
             </div>
         </div>
