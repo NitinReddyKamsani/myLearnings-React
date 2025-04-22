@@ -38,10 +38,10 @@ const Body = () =>{
     if(isOnline === false) return <h1>It seems your are offline !! please check your intenet coonection</h1>
 
     return restaurants.length===0 ? <Shimmer /> : (
-        <div className="">
+        <div className="" >
             <div className="flex justify-between">
                 <div className="m-4 p-4">
-                    <input className="border border-solid border-black"  value = {input} onChange={(e)=>{
+                    <input data-testid="searchInput" className="border border-solid border-black"  value = {input} onChange={(e)=>{
                         setInput(e.target.value);
                     }} />
                     <button className="bg-green-100 m-2 px-4 py-1" onClick={()=>{
